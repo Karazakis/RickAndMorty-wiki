@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.container {
+  @apply bg-sky-900 z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex;
+}
+
+@font-face {
+  font-family: 'RickAndMortyFont';
+  src: url('/font/get_schwifty.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.rick-and-morty-font {
+  font-family: 'RickAndMortyFont', sans-serif;
+  color: aquamarine;
+  text-shadow:
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000, 
+    0 0 5px violet,
+    0 0 10px violet;
+}
+
+strong {
+  font-weight: 900;
+  color: aquamarine;
+}
+
+.defaultbanner{
+  background-color: #424141;
+}
+
+.discover-title{
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 3% 0% 1% 0%;
+}
+
+.detailcard{
+  background-color: #424141;
+  border-radius: 10px;
+  padding: 1%;
+  margin: 1% 0% 1% 0%;
+}
+
+.resultsearch{
+  background-color: #424141;  
+}
+
+.searchbar_type{
+  color: violet;
+}
+
+.archivebanner{
+  background-image: url('/img/rickandmorty.jpg');
+}
+
+.couponbutton{
+  background-color: aquamarine;
+  color: rgb(209, 102, 209);
+}
+
+.couponbutton:hover{
+  background-color: rgb(89, 155, 133);
+  color: rgb(209, 102, 209);
+}
+
+@media(min-width: 768px){
+  .default-banner-image{
+    width: 60%;
+  }
+
+  .discover-title{
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 3% 0% 1% 0%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Riduzione del 30% delle dimensioni del testo per tutti gli elementi */
+  * {
+      font-size: 0.96em; /* Riduzione del 30% rispetto alla dimensione di default */
+  }
+
+  h3{
+    font-size: 1rem !important;
+    line-height: normal !important;
+  }
+
+  .discover-title{
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 15% 0% 10% 0%;
+  }
+}
